@@ -76,6 +76,18 @@
     width: 100%;
 
     @include flex(center, center, column);
+
+    &__cvInfor {
+      @include flex(center, center, column);
+      img {
+        display: block;
+        width: 111px;
+        height: 111px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
     &__language {
       width: 100%;
       margin-bottom: 25px;

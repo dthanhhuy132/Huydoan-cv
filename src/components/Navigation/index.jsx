@@ -10,6 +10,8 @@ import Switch from "react-switch";
 import styled from "styled-components";
 import { OptionContext } from "../../App";
 
+import avatar from "../../assets/Profile.jpg";
+
 export default function Navigation({ initProps }) {
   const [activeItem, setActiveItem] = useState(0);
   let navigate = useNavigate();
@@ -53,6 +55,69 @@ export default function Navigation({ initProps }) {
     }
   }
 
+  const colourStylesSelect = {
+    control: (styles) => ({
+      ...styles,
+      backgroundColor: context.themeMode === "light" ? "" : "#44444444",
+      // borderColor: context.themeMode === "light" ? "" : "red",
+    }),
+
+    singleValue: (styles) => ({
+      ...styles,
+      color: context.themeMode === "light" ? "" : "#fff",
+    }),
+
+    indicatorContainer: (styles) => ({
+      ...styles,
+      color: context.themeMode === "light" ? "" : "#fff",
+
+      ":hover": {
+        ...styles,
+        color: context.themeMode === "light" ? "" : "#fff",
+      },
+    }),
+
+    menu: (styles) => ({
+      ...styles,
+      borderRadius: "5px",
+      overflow: "hidden",
+    }),
+    menuList: (styles) => ({
+      ...styles,
+      borderRadius: "5px",
+      overflow: "hidden",
+    }),
+
+    option: (styles, state) => {
+      return {
+        ...styles,
+        // color: "#000",
+        backgroundColor:
+          context.themeMode === "light"
+            ? state.isSelected
+              ? "#5463ff"
+              : ""
+            : state.isSelected
+            ? "#519dfa"
+            : "grey",
+        overFlow: "hidden",
+
+        ":hover": {
+          ...styles[":hover"],
+          cursor: "pointer",
+          backgroundColor:
+            context.themeMode === "light"
+              ? state.isSelected
+                ? ""
+                : "#c2c6f6"
+              : state.isSelected
+              ? ""
+              : "#bbb",
+        },
+      };
+    },
+  };
+
   return (
     <div className="navigation">
       <div className="navigation__items">
@@ -74,12 +139,24 @@ export default function Navigation({ initProps }) {
       </div>
 
       <div className="options">
+        <div className="options__cvInfor">
+          <img src={avatar}></img>
+          <h3>Huy Đoàn</h3>
+          <p style={{ fontWeight: "500" }}>FrontEnd Fresher</p>
+        </div>
+
+        <div className="options__contact"></div>
+        <div className="options__downloadCV">
+          <i class="fa-solid fa-download"></i>
+        </div>
+
         <div className="options__language">
           <p>{language === "vn" ? "Language:" : "Ngôn ngữ:"}</p>
           <SelectStyled
             options={optionLanguage}
             defaultValue={optionLanguage[0]}
             // menuIsOpen={true}
+            styles={colourStylesSelect}
             onChange={(options) => handleChangeLanguage(options)}
           />
         </div>
@@ -90,7 +167,7 @@ export default function Navigation({ initProps }) {
             borderRadius={7}
             uncheckedIcon={<i className="fa-solid fa-moon"></i>}
             checkedIcon={<i className="fa-solid fa-lightbulb"></i>}
-            onColor="#5463ff"
+            onColor={context.themeMode === "light" ? "#5463ff" : "#5ba5fe"}
           />
         </div>
       </div>
