@@ -1,0 +1,76 @@
+@use "../../scss/" as *;
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.experience-container {
+  margin-left: 10px;
+}
+
+.experience__item {
+  position: relative;
+
+  &:not(:last-child) {
+    padding-bottom: 1.5rem;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 00px;
+    left: -7.5px;
+    border-left: 1px solid $text-color-highlight;
+    height: 100%;
+  }
+
+  &:first-of-type:after {
+    top: 10px !important;
+  }
+
+  .time {
+    @include flex(center, left, row);
+    color: $text-color-highlight;
+
+    p {
+      padding-right: 10px;
+      margin-left: -10px;
+      font-size: 1.1rem;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+
+  .place,
+  .position,
+  .department,
+  .link {
+    padding-left: 20px;
+  }
+}
+
+.dark-mode {
+  .experience__item {
+    &:not(:last-child) {
+    }
+
+    &:after {
+      border-left: 1px solid $text-color-highlight-darkmode;
+    }
+
+    &:first-of-type:after {
+    }
+
+    .time {
+      @include flex(center, left, row);
+      color: $text-color-highlight-darkmode;
+      h3 {
+        font-weight: 300;
+        font-size: 20px;
+      }
+    }
+  }
+}

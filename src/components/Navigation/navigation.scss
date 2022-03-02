@@ -1,0 +1,165 @@
+@use "../../scss/" as *;
+
+.navigation {
+  position: fixed;
+
+  height: 100%;
+  width: 140px;
+  padding-top: $padding-top;
+
+  border-right: 1px solid #000;
+
+  &__items {
+    position: absolute;
+    // top: 30px;
+    left: 0;
+    margin-left: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    .item {
+      @include flex(center, center, column);
+      height: 75px;
+      padding: 10px;
+      width: 130px;
+
+      color: grey;
+
+      i {
+        font-size: 2rem;
+      }
+    }
+
+    .active {
+      color: $main-color;
+    }
+
+    .item-emty {
+      position: absolute;
+      top: 0px;
+      left: 0;
+
+      height: 0;
+      width: 100%;
+
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+
+      transition: top 0.2s ease;
+
+      pointer-events: none;
+    }
+
+    .item-active {
+      position: absolute;
+      top: 0px;
+      right: -8px;
+
+      height: 75px;
+      width: 6px;
+
+      background-color: $main-color;
+      border-radius: 3px;
+
+      transition: top 0.2s ease;
+      z-index: 99;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+  }
+
+  .options {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+
+    @include flex(center, center, column);
+    &__language {
+      width: 100%;
+      margin-bottom: 25px;
+      padding: 0px 5px;
+      cursor: pointer;
+
+      p {
+        margin-bottom: 5px;
+        padding-bottom: 2px;
+        font-size: 14px;
+        display: "block";
+        text-align: center;
+        border-bottom: 1px solid #000;
+      }
+
+      #react-select-3-listbox > div {
+        padding: 0px;
+      }
+    }
+
+    &__darkmode {
+      .react-switch-bg {
+        background-color: #000;
+        .fa-moon,
+        .fa-lightbulb {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.dark-mode {
+  .navigation {
+    background-color: #18191a;
+    border-right: 1px solid #000;
+
+    &__items {
+      .item {
+        color: rgb(149, 147, 147);
+
+        i {
+          font-size: 2rem;
+        }
+      }
+
+      .active {
+        color: $main-color-darkmode;
+        border-right: 1px solid black;
+      }
+
+      .item-emty {
+        background-color: rgba(209, 209, 209, 0.3);
+      }
+
+      .item-active {
+        background-color: $main-color-darkmode;
+      }
+    }
+
+    .options {
+      p &__language {
+        p {
+          border-bottom: 1px solid #000;
+        }
+
+        #react-select-3-listbox > div {
+          padding: 0px;
+        }
+      }
+
+      &__darkmode {
+        .react-switch-bg {
+          background-color: #000;
+          .fa-moon,
+          .fa-lightbulb {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
