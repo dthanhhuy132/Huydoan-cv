@@ -50,6 +50,13 @@ h2 {
   .link {
     padding-left: 20px;
   }
+
+  .link {
+    text-decoration: none;
+    color: $main-color;
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 .dark-mode {
@@ -71,6 +78,9 @@ h2 {
         font-weight: 300;
         font-size: 20px;
       }
+    }
+    .link {
+      color: $main-color-darkmode;
     }
   }
 }

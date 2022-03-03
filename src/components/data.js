@@ -175,7 +175,7 @@ export const experienceData = {
       time: "2013 - 2017",
       place: "University of Science – TP.HCM",
       position: "Position: Student",
-      department: "Department: Environment - Major: Evironment Management",
+      department: "Department: Environment - Major: Environment Management",
     },
   ],
 };

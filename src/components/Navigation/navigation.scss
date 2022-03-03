@@ -6,17 +6,39 @@
   height: 100%;
   width: 140px;
   padding-top: $padding-top;
+  z-index: 10000;
+
+  background-color: #f2f2f2;
 
   border-right: 1px solid #000;
 
+  @include mobile {
+    left: 0;
+    bottom: 0;
+
+    height: 60px;
+    width: 100%;
+    padding-top: 5px;
+    border-right: none;
+
+    display: flex;
+    align-items: center;
+  }
+
   &__items {
     position: absolute;
-    // top: 30px;
     left: 0;
     margin-left: 5px;
 
     display: flex;
     flex-direction: column;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 0;
+    }
 
     .item {
       @include flex(center, center, column);
@@ -24,10 +46,21 @@
       padding: 10px;
       width: 130px;
 
+      @include mobile {
+        padding: 5px 10px;
+        justify-content: space-between;
+        width: auto;
+        height: 100%;
+      }
+
       color: grey;
 
       i {
         font-size: 2rem;
+        @include mobile {
+          padding-bottom: 2px;
+          font-size: 1.6rem;
+        }
       }
     }
 
@@ -49,15 +82,19 @@
       transition: top 0.2s ease;
 
       pointer-events: none;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     .item-active {
       position: absolute;
       top: 0px;
-      right: -8px;
+      right: -7px;
 
       height: 75px;
-      width: 6px;
+      width: 5px;
 
       background-color: $main-color;
       border-radius: 3px;
@@ -72,35 +109,121 @@
   .options {
     position: absolute;
     left: 0;
-    bottom: 20px;
+    bottom: 10px;
     width: 100%;
 
     @include flex(center, center, column);
 
+    @include mobile {
+      position: fixed;
+      bottom: unset;
+      top: 0;
+
+      padding: 0 10px;
+      background: #000;
+
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     &__cvInfor {
+      margin-bottom: 20px;
       @include flex(center, center, column);
       img {
         display: block;
-        width: 111px;
-        height: 111px;
+        width: 90px;
+        height: 90px;
         border-radius: 50%;
         object-fit: cover;
       }
     }
 
+    &__cvInfor2 {
+      @include flex(center, center, row);
+      display: none;
+
+      @include mobile {
+        display: flex;
+        width: 40%;
+      }
+
+      .img-container {
+        position: relative;
+        width: 70px;
+        height: 100%;
+        padding: 10px 20px 10px 10px;
+
+        img {
+          object-fit: cover;
+
+          width: 100%;
+          height: 100%;
+
+          border-radius: 50%;
+        }
+      }
+
+      @include mobile {
+        display: flex;
+      }
+    }
+
+    &__downloadCV {
+      text-align: center;
+      margin-bottom: 20px;
+
+      @include mobile {
+        margin-bottom: 0;
+      }
+
+      a {
+        font-size: 15px;
+        padding: 10px 0px;
+        text-decoration: none;
+        color: $main-color;
+        i {
+          font-size: 30px;
+          padding: 0 50px;
+
+          @include mobile {
+            padding: 0 20px;
+          }
+        }
+
+        p {
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+    }
+
     &__language {
       width: 100%;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
       padding: 0px 5px;
       cursor: pointer;
+
+      @include mobile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        width: unset;
+      }
 
       p {
         margin-bottom: 5px;
         padding-bottom: 2px;
-        font-size: 14px;
+        font-size: 17px;
+        font-weight: 500;
         display: "block";
         text-align: center;
         border-bottom: 1px solid #000;
+
+        @include mobile {
+          display: none;
+        }
       }
 
       #react-select-3-listbox > div {
@@ -108,9 +231,15 @@
       }
     }
 
-    &__darkmode {
+    &__darkmodeSwitch {
+      @include mobile {
+        display: flex;
+        align-items: center;
+      }
+
       .react-switch-bg {
         background-color: #000;
+
         .fa-moon,
         .fa-lightbulb {
           position: absolute;
@@ -140,7 +269,6 @@
 
       .active {
         color: $main-color-darkmode;
-        border-right: 1px solid black;
       }
 
       .item-emty {
@@ -153,6 +281,14 @@
     }
 
     .options {
+      &__downloadCV {
+        a {
+          color: $main-color-darkmode;
+          i {
+          }
+        }
+      }
+
       p &__language {
         p {
           border-bottom: 1px solid #000;
@@ -160,16 +296,6 @@
 
         #react-select-3-listbox > div {
           padding: 0px;
-        }
-      }
-
-      &__darkmode {
-        .react-switch-bg {
-          background-color: #000;
-          .fa-moon,
-          .fa-lightbulb {
-            color: #fff;
-          }
         }
       }
     }

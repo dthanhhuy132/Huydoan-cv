@@ -9,7 +9,6 @@ export default function Introduction() {
   const context = useContext(OptionContext);
 
   const introductionDataLanguage = introductionData[context.language];
-  console.log("object", introductionDataLanguage);
   return (
     <div className="introduction-container">
       <div className="infor">
@@ -55,6 +54,11 @@ export default function Introduction() {
           {introductionDataLanguage.technicalList.map((item, idx) => (
             <p key={idx}>&#10148; {item}</p>
           ))}
+          <p style={{ marginTop: "10px" }}>
+            {context.language === "vn"
+              ? "Anh Văn: giao tiếp, báo cáo"
+              : "English: communication, report"}
+          </p>
         </div>
       </div>
 

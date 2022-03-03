@@ -1,7 +1,7 @@
 import "./navigation.scss";
 import React, { useContext, useEffect, useState } from "react";
 import navigationHover, { navigationActive } from "../../util/navigationHover";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { navigationData } from "../data";
 
@@ -11,17 +11,22 @@ import styled from "styled-components";
 import { OptionContext } from "../../App";
 
 import avatar from "../../assets/Profile.jpg";
+import fileCV from "../../assets/HuyDoan-Frontend-Fresher.pdf";
 
 export default function Navigation({ initProps }) {
   const [activeItem, setActiveItem] = useState(0);
+  const [isResponsive, setIsResponsive] = useState(false);
   let navigate = useNavigate();
+  const location = useLocation();
   const context = useContext(OptionContext);
+  const isIntroductionPage = location.pathname === "/introduction";
 
   const { themeMode, setThemeMode, language, setLanguage } = initProps;
 
   useEffect(() => {
-    navigationHover();
     navigate("/introduction");
+    navigationHover();
+    navigationActive();
   }, []);
 
   useEffect(() => {
@@ -33,9 +38,9 @@ export default function Navigation({ initProps }) {
   }, [themeMode]);
 
   function handleClickItem(item) {
+    navigationActive();
     setActiveItem(item.active);
     navigate(item.navigation);
-    navigationActive();
   }
 
   const optionLanguage = [
@@ -59,7 +64,6 @@ export default function Navigation({ initProps }) {
     control: (styles) => ({
       ...styles,
       backgroundColor: context.themeMode === "light" ? "" : "#44444444",
-      // borderColor: context.themeMode === "light" ? "" : "red",
     }),
 
     singleValue: (styles) => ({
@@ -67,9 +71,10 @@ export default function Navigation({ initProps }) {
       color: context.themeMode === "light" ? "" : "#fff",
     }),
 
-    indicatorContainer: (styles) => ({
+    indicatorsContainer: (styles) => ({
       ...styles,
       color: context.themeMode === "light" ? "" : "#fff",
+      transform: "rotate(270deg)",
 
       ":hover": {
         ...styles,
@@ -77,15 +82,24 @@ export default function Navigation({ initProps }) {
       },
     }),
 
+    indicatorSeparator: (style) => ({
+      ...style,
+      display: "none",
+    }),
+
     menu: (styles) => ({
       ...styles,
       borderRadius: "5px",
       overflow: "hidden",
+      top: "-19%",
+      left: "108%",
+      zIndex: "999999",
     }),
     menuList: (styles) => ({
       ...styles,
       borderRadius: "5px",
       overflow: "hidden",
+      padding: 0,
     }),
 
     option: (styles, state) => {
@@ -139,28 +153,49 @@ export default function Navigation({ initProps }) {
       </div>
 
       <div className="options">
-        <div className="options__cvInfor">
-          <img src={avatar}></img>
+        {!isIntroductionPage && (
+          <div className="options__cvInfor">
+            <img src={avatar}></img>
+            <h3>Huy Đoàn</h3>
+            <p style={{ fontWeight: "500" }}>FrontEnd Fresher</p>
+          </div>
+        )}
+
+        <div className="options__cvInfor2">
+          <div className="img-container">
+            <img src={avatar}></img>
+          </div>
           <h3>Huy Đoàn</h3>
           <p style={{ fontWeight: "500" }}>FrontEnd Fresher</p>
         </div>
 
         <div className="options__contact"></div>
         <div className="options__downloadCV">
-          <i class="fa-solid fa-download"></i>
+          <a href={fileCV} download>
+            <i className="fa-solid fa-download"></i>
+            <p>
+              <br />
+              Download Huy's CV
+            </p>
+          </a>
         </div>
 
         <div className="options__language">
           <p>{language === "vn" ? "Language:" : "Ngôn ngữ:"}</p>
           <SelectStyled
+            isSearchable={false}
             options={optionLanguage}
-            defaultValue={optionLanguage[0]}
+            defaultValue={
+              optionLanguage[
+                optionLanguage.findIndex((x) => x.value === language)
+              ]
+            }
             // menuIsOpen={true}
             styles={colourStylesSelect}
             onChange={(options) => handleChangeLanguage(options)}
           />
         </div>
-        <div className="options__darkmode">
+        <div className="options__darkmodeSwitch">
           <Switch
             onChange={handleSwitchMode}
             checked={themeMode === "light" ? false : true}

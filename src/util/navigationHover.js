@@ -16,12 +16,11 @@ export default function navigationHover() {
 }
 
 export function navigationActive() {
-  const itemEmty = document.querySelector(".item-active");
+  const itemActive = document.querySelector(".item-active");
   const itemEls = document.querySelectorAll(".item");
   itemEls.forEach((itemEl, index) => {
     itemEl.addEventListener("click", () => {
-      itemEmty.style.top = `${index * 75}px`;
-      itemEmty.style.height = "75px";
+      itemActive.style.top = `${index * 75}px`;
     });
   });
 }

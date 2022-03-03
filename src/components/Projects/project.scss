@@ -117,7 +117,7 @@
 
     background-color: grey;
 
-    z-index: 10;
+    z-index: 1;
 
     @keyframes scale {
       from {
@@ -207,9 +207,6 @@
       &:hover {
         cursor: pointer;
         background-color: rgb(207, 205, 205);
-
-        i {
-        }
       }
 
       i {

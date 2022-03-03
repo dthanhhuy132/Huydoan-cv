@@ -55,13 +55,19 @@ html {
 
   .home-page {
     // display: flex;
-    padding-right: 40px;
+
     padding-bottom: 15px;
     position: relative;
 
     &__content {
+      margin-right: 40px;
       margin-left: 190px;
       padding-top: $padding-top;
+
+      @include mobile {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
     }
   }
 }

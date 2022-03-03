@@ -13,8 +13,14 @@ import Orientation from "./components/Orientation";
 export const OptionContext = createContext("");
 function App() {
   const [isShowLoadingPage, setIsShowLoadingPage] = useState(false);
-  const [themeMode, setThemeMode] = useState("light");
-  const [language, setLanguage] = useState("vn");
+  const themeModeDefault = localStorage.getItem("themeMode")
+    ? localStorage.getItem("themeMode")
+    : "light";
+  const languageDefault = localStorage.getItem("language")
+    ? localStorage.getItem("language")
+    : "vn";
+  const [themeMode, setThemeMode] = useState(themeModeDefault);
+  const [language, setLanguage] = useState(languageDefault);
 
   const contextValue = {
     themeMode,
@@ -31,6 +37,11 @@ function App() {
   useEffect(() => {
     setTimeout(() => setIsShowLoadingPage(false), 5300);
   }, ["once"]);
+
+  useEffect(() => {
+    localStorage.setItem("themeMode", themeMode);
+    localStorage.setItem("language", language);
+  }, [themeMode, language]);
 
   return (
     <div className="App">

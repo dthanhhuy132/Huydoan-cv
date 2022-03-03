@@ -28,8 +28,10 @@ export default function Experience() {
             )}
 
             {item.link && (
-              <a href={item.link} className="link">
-                Đường dẫn tham khảo
+              <a href={item.link} className="link" target="_blank">
+                {context.language === "vn"
+                  ? "Đường dẫn tham khảo"
+                  : "Reference link"}
               </a>
             )}
           </div>
