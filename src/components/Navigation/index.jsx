@@ -12,6 +12,7 @@ import { OptionContext } from "../../App";
 
 import avatar from "../../assets/Profile.jpg";
 import fileCV from "../../assets/HuyDoan-Frontend-Fresher.pdf";
+import colorStylesReactSelect from "../../util/colorStyleReactSelect";
 
 export default function Navigation({ initProps }) {
   const [activeItem, setActiveItem] = useState(0);
@@ -60,77 +61,7 @@ export default function Navigation({ initProps }) {
     }
   }
 
-  const colourStylesSelect = {
-    control: (styles) => ({
-      ...styles,
-      backgroundColor: context.themeMode === "light" ? "" : "#44444444",
-    }),
-
-    singleValue: (styles) => ({
-      ...styles,
-      color: context.themeMode === "light" ? "" : "#fff",
-    }),
-
-    indicatorsContainer: (styles) => ({
-      ...styles,
-      color: context.themeMode === "light" ? "" : "#fff",
-      transform: "rotate(270deg)",
-
-      ":hover": {
-        ...styles,
-        color: context.themeMode === "light" ? "" : "#fff",
-      },
-    }),
-
-    indicatorSeparator: (style) => ({
-      ...style,
-      display: "none",
-    }),
-
-    menu: (styles) => ({
-      ...styles,
-      borderRadius: "5px",
-      overflow: "hidden",
-      top: "-19%",
-      left: "108%",
-      zIndex: "999999",
-    }),
-    menuList: (styles) => ({
-      ...styles,
-      borderRadius: "5px",
-      overflow: "hidden",
-      padding: 0,
-    }),
-
-    option: (styles, state) => {
-      return {
-        ...styles,
-        // color: "#000",
-        backgroundColor:
-          context.themeMode === "light"
-            ? state.isSelected
-              ? "#5463ff"
-              : ""
-            : state.isSelected
-            ? "#519dfa"
-            : "grey",
-        overFlow: "hidden",
-
-        ":hover": {
-          ...styles[":hover"],
-          cursor: "pointer",
-          backgroundColor:
-            context.themeMode === "light"
-              ? state.isSelected
-                ? ""
-                : "#c2c6f6"
-              : state.isSelected
-              ? ""
-              : "#bbb",
-        },
-      };
-    },
-  };
+  const colorStylesSelect = colorStylesReactSelect(context);
 
   return (
     <div className="navigation">
@@ -150,6 +81,7 @@ export default function Navigation({ initProps }) {
 
         <div className="item-emty"></div>
         <div className="item-active"></div>
+        <div className="item-active-responsive"></div>
       </div>
 
       <div className="options">
@@ -162,26 +94,20 @@ export default function Navigation({ initProps }) {
         )}
 
         <div className="options__cvInfor2">
-          <div className="img-container">
-            <img src={avatar}></img>
-          </div>
+          <img src={avatar}></img>
           <h3>Huy Đoàn</h3>
-          <p style={{ fontWeight: "500" }}>FrontEnd Fresher</p>
         </div>
 
         <div className="options__contact"></div>
         <div className="options__downloadCV">
           <a href={fileCV} download>
             <i className="fa-solid fa-download"></i>
-            <p>
-              <br />
-              Download Huy's CV
-            </p>
+            <p style={{ marginTop: "3px" }}>Download Huy's CV</p>
           </a>
         </div>
 
         <div className="options__language">
-          <p>{language === "vn" ? "Language:" : "Ngôn ngữ:"}</p>
+          <i className="fa-solid fa-language"></i>
           <SelectStyled
             isSearchable={false}
             options={optionLanguage}
@@ -191,7 +117,7 @@ export default function Navigation({ initProps }) {
               ]
             }
             // menuIsOpen={true}
-            styles={colourStylesSelect}
+            styles={colorStylesSelect}
             onChange={(options) => handleChangeLanguage(options)}
           />
         </div>

@@ -18,7 +18,7 @@ export default function Introduction() {
         <div className="infor__detail">
           <h1 className="infor__detail__name">Đoàn Thanh Huy</h1>
           <h3 className="infor__detail__position">
-            Front-end Developer (Fresher)
+            FrontEnd Developer (Fresher)
           </h3>
           <div className="infor__detail__personal">
             <div className="personal-item">

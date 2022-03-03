@@ -21,7 +21,7 @@ export const introductionData = {
       "<p>''First of all, I would like to thanks to you for looking at this CV. I am a cheerful person and get along very easily with colleagues. If I could use 3 words to describe myself, I would like to use these words: <i>Patience - Effort - Actively learn</i>. Always strive for the work goals and the common interests of the company]]</p>",
     technicalTitle: "Skill",
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
-    jobGoalTitle: "Job goal",
+    jobGoalTitle: "Job objective",
     jobGoalText:
       "Desire to work in a friendly, challenging environment and constantly improve knowledge and skills. Using the experience and knowledge to contribute to the company, become a Front-end Junior in a period of 3 years.",
     orientation: "Job Orientation",

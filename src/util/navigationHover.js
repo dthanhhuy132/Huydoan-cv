@@ -17,10 +17,15 @@ export default function navigationHover() {
 
 export function navigationActive() {
   const itemActive = document.querySelector(".item-active");
+  const itemActiveResponsive = document.querySelector(
+    ".item-active-responsive"
+  );
   const itemEls = document.querySelectorAll(".item");
   itemEls.forEach((itemEl, index) => {
     itemEl.addEventListener("click", () => {
       itemActive.style.top = `${index * 75}px`;
+      itemActiveResponsive.style.left = itemEl.offsetLeft + "px";
+      itemActiveResponsive.style.width = itemEl.clientWidth + "px";
     });
   });
 }

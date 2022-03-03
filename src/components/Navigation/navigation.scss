@@ -16,9 +16,9 @@
     left: 0;
     bottom: 0;
 
-    height: 60px;
+    height: 65px;
     width: 100%;
-    padding-top: 5px;
+    padding: 5px 0 8px 0;
     border-right: none;
 
     display: flex;
@@ -40,6 +40,8 @@
       margin-left: 0;
     }
 
+    color: #222;
+
     .item {
       @include flex(center, center, column);
       height: 75px;
@@ -53,13 +55,11 @@
         height: 100%;
       }
 
-      color: grey;
-
       i {
         font-size: 2rem;
         @include mobile {
           padding-bottom: 2px;
-          font-size: 1.6rem;
+          font-size: 1.4rem;
         }
       }
     }
@@ -88,21 +88,39 @@
       }
     }
 
-    .item-active {
+    .item-active,
+    .item-active-responsive {
       position: absolute;
-      top: 0px;
-      right: -7px;
-
-      height: 75px;
-      width: 5px;
 
       background-color: $main-color;
       border-radius: 3px;
 
       transition: top 0.2s ease;
-      z-index: 99;
+      z-index: 999;
       pointer-events: none;
       transition: all 0.2s ease;
+    }
+
+    .item-active {
+      top: 0px;
+      right: -7px;
+
+      height: 75px;
+      width: 5px;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .item-active-responsive {
+      display: none;
+      left: 0;
+      bottom: -2px;
+      width: 105px;
+      height: 5px;
+      @include mobile {
+        display: block;
+      }
     }
   }
 
@@ -119,8 +137,10 @@
       bottom: unset;
       top: 0;
 
+      height: 50px;
+
       padding: 0 10px;
-      background: #000;
+      background: $background-light-mode;
 
       flex-direction: row;
       align-items: center;
@@ -130,6 +150,11 @@
     &__cvInfor {
       margin-bottom: 20px;
       @include flex(center, center, column);
+
+      @include mobile {
+        display: none;
+      }
+
       img {
         display: block;
         width: 90px;
@@ -140,32 +165,27 @@
     }
 
     &__cvInfor2 {
-      @include flex(center, center, row);
       display: none;
 
       @include mobile {
         display: flex;
-        width: 40%;
+        align-items: center;
       }
 
-      .img-container {
-        position: relative;
-        width: 70px;
-        height: 100%;
-        padding: 10px 20px 10px 10px;
-
-        img {
-          object-fit: cover;
-
-          width: 100%;
-          height: 100%;
-
-          border-radius: 50%;
-        }
+      h3 {
+        font-weight: 400;
+        font-size: 17px;
       }
 
-      @include mobile {
-        display: flex;
+      img {
+        object-fit: cover;
+        object-position: top;
+
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+
+        border-radius: 50%;
       }
     }
 
@@ -187,7 +207,8 @@
           padding: 0 50px;
 
           @include mobile {
-            padding: 0 20px;
+            padding: 0 10px;
+            font-size: 20px;
           }
         }
 
@@ -197,9 +218,15 @@
           }
         }
       }
+
+      &:hover {
+        color: red;
+      }
     }
 
     &__language {
+      position: relative;
+
       width: 100%;
       margin-bottom: 10px;
       padding: 0px 5px;
@@ -212,18 +239,12 @@
         width: unset;
       }
 
-      p {
-        margin-bottom: 5px;
-        padding-bottom: 2px;
-        font-size: 17px;
-        font-weight: 500;
-        display: "block";
-        text-align: center;
-        border-bottom: 1px solid #000;
-
-        @include mobile {
-          display: none;
-        }
+      i {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 20px;
       }
 
       #react-select-3-listbox > div {
@@ -260,11 +281,7 @@
 
     &__items {
       .item {
-        color: rgb(149, 147, 147);
-
-        i {
-          font-size: 2rem;
-        }
+        color: rgb(200, 199, 199);
       }
 
       .active {
@@ -275,17 +292,20 @@
         background-color: rgba(209, 209, 209, 0.3);
       }
 
-      .item-active {
+      .item-active,
+      .item-active-responsive {
         background-color: $main-color-darkmode;
       }
     }
 
     .options {
+      @include mobile {
+        background: $background-dark-mode;
+      }
+
       &__downloadCV {
         a {
           color: $main-color-darkmode;
-          i {
-          }
         }
       }
 

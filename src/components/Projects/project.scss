@@ -76,6 +76,10 @@
 
       .function {
         width: 50%;
+
+        @include mobile {
+          width: 40%;
+        }
         div {
           padding-right: 10px;
         }
@@ -84,6 +88,10 @@
 
       .technical {
         width: 50%;
+
+        @include mobile {
+          width: 60%;
+        }
         div {
           padding-left: 10px;
         }
@@ -183,16 +191,7 @@
         }
 
         .function {
-          div {
-          }
           border-right: 1px solid rgb(210, 210, 210);
-        }
-
-        .technical {
-          width: 50%;
-
-          .title {
-          }
         }
       }
 
