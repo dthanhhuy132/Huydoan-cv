@@ -202,7 +202,7 @@ export const projectData = {
     {
       name: "Post UI",
       introduce: "Đây là project viết bằng HTML-CSS-Javacript",
-      functionHighlight: "Các chức năng cơ bản",
+      functionHighlight: "Các chức năng",
       function: [
         "Thêm - sửa - xóa - tìm kiếm bài viết",
         "Phân trang",
@@ -222,7 +222,7 @@ export const projectData = {
       name: "The movie App",
       introduce:
         "Được xây dựng dựa vào api từ ''https://developers.themoviedb.org/3''",
-      functionHighlight: "Các chức năng cơ bản",
+      functionHighlight: "Các chức năng",
       function: [
         "Tìm kiếm video",
         "Thay đổi bố cục tích lũy (CLS)",

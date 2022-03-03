@@ -113,13 +113,13 @@
     }
 
     .item-active-responsive {
-      display: none;
+      opacity: 0;
       left: 0;
       bottom: -2px;
-      width: 105px;
+      width: 0px;
       height: 5px;
       @include mobile {
-        display: block;
+        opacity: 1;
       }
     }
   }

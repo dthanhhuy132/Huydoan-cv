@@ -15,12 +15,17 @@ export default function navigationHover() {
   });
 }
 
-export function navigationActive() {
+export function navigationActive(isFirstRender) {
+  const itemEls = document.querySelectorAll(".item");
   const itemActive = document.querySelector(".item-active");
   const itemActiveResponsive = document.querySelector(
     ".item-active-responsive"
   );
-  const itemEls = document.querySelectorAll(".item");
+  const itemIsActive = document.querySelector(".item.active");
+
+  if (itemActiveResponsive.style.width == 0)
+    itemActiveResponsive.style.width = itemIsActive.clientWidth + "px";
+
   itemEls.forEach((itemEl, index) => {
     itemEl.addEventListener("click", () => {
       itemActive.style.top = `${index * 75}px`;
@@ -28,4 +33,13 @@ export function navigationActive() {
       itemActiveResponsive.style.width = itemEl.clientWidth + "px";
     });
   });
+}
+
+export function navigationActiveResponsive() {
+  const itemActive = document.querySelector(".item.active");
+  const itemActiveResponsive = document.querySelector(
+    ".item-active-responsive"
+  );
+  itemActiveResponsive.style.width = itemActive.clientWidth + "px";
+  itemActiveResponsive.style.left = itemActive.offsetLeft + "px";
 }

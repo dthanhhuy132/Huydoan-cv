@@ -1,6 +1,9 @@
 import "./navigation.scss";
 import React, { useContext, useEffect, useState } from "react";
-import navigationHover, { navigationActive } from "../../util/navigationHover";
+import navigationHover, {
+  navigationActive,
+  navigationActiveResponsive,
+} from "../../util/navigationHover";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { navigationData } from "../data";
@@ -16,7 +19,7 @@ import colorStylesReactSelect from "../../util/colorStyleReactSelect";
 
 export default function Navigation({ initProps }) {
   const [activeItem, setActiveItem] = useState(0);
-  const [isResponsive, setIsResponsive] = useState(false);
+
   let navigate = useNavigate();
   const location = useLocation();
   const context = useContext(OptionContext);
@@ -28,6 +31,7 @@ export default function Navigation({ initProps }) {
     navigate("/introduction");
     navigationHover();
     navigationActive();
+    navigationActiveResponsive();
   }, []);
 
   useEffect(() => {
@@ -36,7 +40,9 @@ export default function Navigation({ initProps }) {
     } else {
       document.querySelector("body").classList.add("dark-mode");
     }
-  }, [themeMode]);
+    navigationActive();
+    navigationActiveResponsive();
+  }, [themeMode, language]);
 
   function handleClickItem(item) {
     navigationActive();
