@@ -17,6 +17,14 @@
         left: 0;
         width: 100%;
         border-bottom: 1px solid #000;
+
+        @include mobile {
+          bottom: 0;
+        }
+      }
+
+      @include mobile {
+        display: block;
       }
 
       li {
@@ -36,6 +44,11 @@
           text-decoration: none;
           color: #000;
         }
+
+        @include mobile {
+          margin-right: 10px;
+          margin-bottom: 10px;
+        }
       }
     }
   }
@@ -46,6 +59,12 @@
     &__name {
       margin-top: 30px;
       color: $text-color-highlight;
+    }
+
+    &:last-child {
+      @include mobile {
+        margin-bottom: 0;
+      }
     }
 
     &__video {
@@ -105,7 +124,7 @@
     }
 
     &__linkDemo {
-      display: inline-block;
+      display: block;
       text-decoration: none;
       color: $main-color;
 
@@ -126,6 +145,10 @@
     background-color: grey;
 
     z-index: 1;
+
+    @include mobile {
+      bottom: 70px !important;
+    }
 
     @keyframes scale {
       from {

@@ -65,10 +65,7 @@ html {
       padding-top: $padding-top;
 
       @include mobile {
-        margin-right: 10px;
-        margin-left: 10px;
-        margin-top: 50px;
-        margin-bottom: 65px;
+        margin: 50px 10px 65px 10px;
       }
     }
   }

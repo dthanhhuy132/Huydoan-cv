@@ -1,9 +1,11 @@
 import "./navigation.scss";
 import React, { useContext, useEffect, useState } from "react";
 import navigationHover, {
+  clickOnLogo,
+  hideNavigation,
   navigationActive,
   navigationActiveResponsive,
-} from "../../util/navigationHover";
+} from "../../util/navigationCommon";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { navigationData } from "../data";
@@ -32,6 +34,8 @@ export default function Navigation({ initProps }) {
     navigationHover();
     navigationActive();
     navigationActiveResponsive();
+    window.scrollTo(0, 0);
+    hideNavigation();
   }, []);
 
   useEffect(() => {
@@ -42,12 +46,11 @@ export default function Navigation({ initProps }) {
     }
     navigationActive();
     navigationActiveResponsive();
-  }, [themeMode, language]);
+  }, [themeMode, language, location.pathname]);
 
   function handleClickItem(item) {
-    navigationActive();
-    setActiveItem(item.active);
     navigate(item.navigation);
+    navigationActive();
   }
 
   const optionLanguage = [
@@ -74,7 +77,9 @@ export default function Navigation({ initProps }) {
       <div className="navigation__items">
         {navigationData[context.language].map((item, i) => (
           <div
-            className={` item ${item.active === activeItem ? "active" : ""}`}
+            className={` item ${
+              item.navigation == location.pathname ? "active" : ""
+            }`}
             key={i}
             onClick={() => handleClickItem(item)}
           >
@@ -92,14 +97,26 @@ export default function Navigation({ initProps }) {
 
       <div className="options">
         {!isIntroductionPage && (
-          <div className="options__cvInfor">
+          <div
+            className="options__cvInfor"
+            onClick={() => {
+              navigate("./introduction");
+              clickOnLogo();
+            }}
+          >
             <img src={avatar}></img>
             <h3>Huy Đoàn</h3>
             <p style={{ fontWeight: "500" }}>FrontEnd Fresher</p>
           </div>
         )}
 
-        <div className="options__cvInfor2">
+        <div
+          className="options__cvInfor2"
+          onClick={() => {
+            navigate("./introduction");
+            clickOnLogo();
+          }}
+        >
           <img src={avatar}></img>
           <h3>Huy Đoàn</h3>
         </div>

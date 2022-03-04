@@ -4,12 +4,12 @@ export const introductionData = {
     phone: "SĐT",
     introductionTitle: "Giới thiệu",
     introductionText:
-      "<p>''Lời đầu tiêu, em rất cảm ơn quý anh/chị, nhà tuyển dụng đã xem qua CV này. Em là người vui vẻ và rất dễ hòa đồng với đồng nghiệp. Nếu được sử dụng 3 từ để miêu tả về bản thân, em xin phép được sử dụng những từ: <i>Nhẫn nại – Cố gắng – Tích cực học hỏi</i> . Luôn phấn đầu vì mục tiêu công việc và lợi ích chung của công ty''</p>",
+      "<p>''Lời đầu tiêu, em rất cảm ơn quý anh/chị, nhà tuyển dụng đã xem qua CV này. Em là người cởi mở và rất dễ hòa đồng với đồng nghiệp. Nếu được sử dụng 3 từ để miêu tả về bản thân, em xin phép được sử dụng những từ: <i>Nhẫn nại – Cố gắng – Tích cực học hỏi</i> . Luôn phấn đầu vì mục tiêu công việc và lợi ích chung của công ty''</p>",
     technicalTitle: "Kỹ thuật",
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
     jobGoalTitle: "Mục tiêu công việc",
     jobGoalText:
-      "Mong muốn làm việc trong môi trường thân thiện, đầy thử thách và thường xuyên được trau dồi kiến thức, kĩ năng. Sử dụng các kinh nghiệm, kiến thức để đóng góp cho công ty, trở thành một Front-end Junior trong khoảng thời gian 3 năm.",
+      "Mong muốn làm việc trong môi trường thân thiện, đầy thử thách và thường xuyên được trau dồi kiến thức, kĩ năng. Sử dụng các kinh nghiệm, kiến thức để đóng góp cho công ty, trở thành một FrontEnd Junior trong khoảng thời gian 3 năm.",
     orientation: "Định hướng công việc",
     orientationList: ["Typescript", "NextJS", "Tìm hiểu về Back-end"],
   },
@@ -18,12 +18,12 @@ export const introductionData = {
     phone: "Phone",
     introductionTitle: "Introduction",
     introductionText:
-      "<p>''First of all, I would like to thanks to you for looking at this CV. I am a cheerful person and get along very easily with colleagues. If I could use 3 words to describe myself, I would like to use these words: <i>Patience - Effort - Actively learn</i>. Always strive for the work goals and the common interests of the company]]</p>",
+      "<p>''First of all, I would like to thanks to you for looking at this CV. I am open mind  and sociable with colleagues. If I could use 3 words to describe myself, I would like to use these words: <i>Patience - Effort - Actively learn</i>. Always striving for the work goals and the common ojective of company</p>",
     technicalTitle: "Skill",
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
     jobGoalTitle: "Job objective",
     jobGoalText:
-      "Desire to work in a friendly, challenging environment and constantly improve knowledge and skills. Using the experience and knowledge to contribute to the company, become a Front-end Junior in a period of 3 years.",
+      "Desire to work in a friendly, challenging environment and constantly improve knowledge and skills. Using the experience and knowledge to contribute to the company, become a FrontEnd Junior in a period of 3 years.",
     orientation: "Job Orientation",
     orientationList: ["Typescript", "NextJS", "Back-end"],
   },
@@ -91,7 +91,7 @@ export const navigationData = {
     {
       active: 3,
       id: "My Design",
-      name: "My Design",
+      name: "Personal",
       icon: <i className="fa-solid fa-heart"></i>,
       navigation: "/design",
     },
@@ -216,6 +216,7 @@ export const projectData = {
       ],
       linkDemoName: "Link demo: Project - Post UI",
       link: "https://js-post-ui-8b5gp1z2m-dthanhhuy132.vercel.app/",
+      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
     },
 
     {
@@ -232,13 +233,24 @@ export const projectData = {
       technical: ["Công nghệ: ReactJS", "SCSS", "Swiper"],
       linkDemoName: "Link demo: Project - The movie DB",
       link: "https://themoviedb-clone.vercel.app/",
+      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
     },
 
     {
       name: "Tic-tac-toe và Color Matching",
-      introduce: "Được xây dựng dựa vào api từ .. ",
-      linkDemoName: "Link demo: Project - The movie DB",
-      link: "https://themoviedb-clone.vercel.app/",
+      introduce: "Các game đều được viết bằng Javascript thuần ",
+      linkDemoName: [
+        "Link demo: Project - Game Tic-tac-toe",
+        "Link demo: Project - Game Color Maching",
+      ],
+      link: [
+        "https://tic-tac-toe-eight-eosin.vercel.app/",
+        "https://color-matching-one.vercel.app/",
+      ],
+      youtubeLink: [
+        "https://www.youtube.com/embed/OkRPv5Sa72I",
+        "https://www.youtube.com/embed/OkRPv5Sa72I",
+      ],
     },
   ],
   en: [
@@ -276,25 +288,37 @@ export const projectData = {
       ],
       linkDemoName: "Link demo: Project - Post UI",
       link: "https://js-post-ui-8b5gp1z2m-dthanhhuy132.vercel.app/",
+      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
     },
 
     {
       name: "The movie App",
-      introduce: "Được xây dựng dựa vào api từ .. ",
+      introduce:
+        "This web app is coded by api from ''https://developers.themoviedb.org/3''",
       functionHighlight: "Basic functions",
       function: ["Search videos", "Cumulative Layout Shift (CLS)"],
 
       technical: ["Technical: ReactJS", "SCSS", "Swiper"],
       linkDemoName: "Link demo: Project - The movie DB",
       link: "https://themoviedb-clone.vercel.app/",
+      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
     },
 
     {
       name: "Tic-tac-toe & Color Matching",
       introduce: "These are 2 basic games written in pure Javascript",
-
-      linkDemoName: "Link demo: Project - The movie DB",
-      link: "https://themoviedb-clone.vercel.app/",
+      linkDemoName: [
+        "Link demo: Project - Game Tic-tac-toe",
+        "Link demo: Project - Game Color Maching",
+      ],
+      link: [
+        "https://tic-tac-toe-eight-eosin.vercel.app/",
+        "https://color-matching-one.vercel.app/",
+      ],
+      youtubeLink: [
+        "https://www.youtube.com/embed/OkRPv5Sa72I",
+        "https://www.youtube.com/embed/OkRPv5Sa72I",
+      ],
     },
   ],
 };
