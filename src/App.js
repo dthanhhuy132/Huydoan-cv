@@ -12,7 +12,7 @@ import Orientation from "./components/Orientation";
 
 export const OptionContext = createContext("");
 function App() {
-  const [isShowLoadingPage, setIsShowLoadingPage] = useState(false);
+  const [isShowLoadingPage, setIsShowLoadingPage] = useState(true);
   const themeModeDefault = localStorage.getItem("themeMode")
     ? localStorage.getItem("themeMode")
     : "light";

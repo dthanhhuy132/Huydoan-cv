@@ -48,6 +48,11 @@ export default function Navigation({ initProps }) {
     navigationActiveResponsive();
   }, [themeMode, language, location.pathname]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    return () => {};
+  }, [location.pathname]);
+
   function handleClickItem(item) {
     navigate(item.navigation);
     navigationActive();

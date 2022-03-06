@@ -206,7 +206,7 @@ export const projectData = {
       function: [
         "Thêm - sửa - xóa - tìm kiếm bài viết",
         "Phân trang",
-        "Upload Ảnh",
+        "Xác minh form với Yup",
       ],
 
       technical: [
@@ -261,7 +261,7 @@ export const projectData = {
       function: [
         "Dark mode",
         "Two level comments (API not supported)",
-        "Image Upload",
+        "Form validate with Yup",
       ],
 
       technical: ["Technical: ReactJS", "Redux", "Styled components"],
