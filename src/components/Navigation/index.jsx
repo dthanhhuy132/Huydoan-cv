@@ -81,7 +81,7 @@ export default function Navigation({ initProps }) {
 
   function hanldeClickDownload(e, href) {
     setIsShowLoadingDownload(true);
-    setTimeout(() => setIsShowLoadingDownload(false), 1300);
+    setTimeout(() => setIsShowLoadingDownload(false), 2000);
   }
 
   return (

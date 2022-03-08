@@ -31,7 +31,17 @@ export default function Introduction() {
             </div>
             <div className="personal-item">
               <p>Gmail</p>
-              <p>: dthanhhuy132@gmail.com</p>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=dthanhhuy132@gmail.com"
+                target="_blank"
+                style={{
+                  textDecoration: "none",
+                  color: context.themeMode === "light" ? "blue" : "#008dff",
+                  fontWeight: "500",
+                }}
+              >
+                : dthanhhuy132@gmail.com
+              </a>
             </div>
           </div>
         </div>

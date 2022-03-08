@@ -10,6 +10,7 @@ import setColorProjectNavigation from "../../util/setColorProjectNavigation";
 export default function Projects() {
   const context = useContext(OptionContext);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [dataEmpty, setDataEmpty] = useState({});
   const projectDataFilter = projectData[context.language];
   const location = useLocation();
 
@@ -26,7 +27,9 @@ export default function Projects() {
 
     setColorProjectNavigation();
 
-    return () => {};
+    return () => {
+      setDataEmpty({});
+    };
   }, []);
 
   function handleClickToTop() {
