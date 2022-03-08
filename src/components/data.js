@@ -5,7 +5,7 @@ export const introductionData = {
     introductionTitle: "Giới thiệu",
     introductionText:
       "<p>''Lời đầu tiêu, em rất cảm ơn quý anh/chị, nhà tuyển dụng đã xem qua CV này. Em là người cởi mở và rất dễ hòa đồng với đồng nghiệp. Nếu được sử dụng 3 từ để miêu tả về bản thân, em xin phép được sử dụng những từ: <i>Nhẫn nại – Cố gắng – Tích cực học hỏi</i> . Luôn phấn đầu vì mục tiêu công việc và lợi ích chung của công ty''</p>",
-    technicalTitle: "Kỹ thuật",
+    technicalTitle: "Kỹ năng",
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
     jobGoalTitle: "Mục tiêu công việc",
     jobGoalText:
