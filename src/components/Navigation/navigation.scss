@@ -200,17 +200,29 @@
     }
 
     &__downloadCV {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       margin-bottom: 20px;
       padding: 10px 0;
       border-radius: 10px;
 
-      @include mobile {
-        margin-bottom: 0;
-      }
+      width: 96%;
+      min-height: 70px;
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.2);
+
+        @include mobile {
+          background-color: transparent;
+        }
+      }
+
+      @include mobile {
+        margin-bottom: 0;
+        max-width: 35px;
+        max-height: 35px;
       }
 
       a {
@@ -228,6 +240,7 @@
         }
 
         p {
+          text-align: center;
           @include mobile {
             display: none;
           }
@@ -339,6 +352,10 @@
 
         &:hover {
           background-color: rgba(209, 209, 209, 0.3);
+
+          @include mobile {
+            background-color: transparent;
+          }
         }
       }
 
@@ -352,5 +369,30 @@
         }
       }
     }
+  }
+}
+
+.wrapper {
+  width: 30px;
+  margin: 0 auto;
+
+  @include mobile {
+    width: 20px;
+  }
+}
+
+.checkmark {
+  stroke: green;
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 2s ease-out forwards infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 745.74853515625;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }

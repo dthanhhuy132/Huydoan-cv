@@ -18,9 +18,11 @@ import { OptionContext } from "../../App";
 import avatar from "../../assets/Profile.jpg";
 import fileCV from "../../assets/HuyDoan-Frontend-Fresher.pdf";
 import colorStylesReactSelect from "../../util/colorStyleReactSelect";
+import LoadingIcon from "./Loading";
 
 export default function Navigation({ initProps }) {
   const [activeItem, setActiveItem] = useState(0);
+  const [isShowLoadingDownload, setIsShowLoadingDownload] = useState(false);
 
   let navigate = useNavigate();
   const location = useLocation();
@@ -77,6 +79,11 @@ export default function Navigation({ initProps }) {
 
   const colorStylesSelect = colorStylesReactSelect(context);
 
+  function hanldeClickDownload(e, href) {
+    setIsShowLoadingDownload(true);
+    setTimeout(() => setIsShowLoadingDownload(false), 1300);
+  }
+
   return (
     <div className="navigation">
       <div className="navigation__items">
@@ -126,12 +133,19 @@ export default function Navigation({ initProps }) {
           <h3>Huy Đoàn</h3>
         </div>
 
-        <div className="options__contact"></div>
         <div className="options__downloadCV">
-          <a href={fileCV} download>
-            <i className="fa-solid fa-download"></i>
-            <p style={{ marginTop: "3px" }}>Download Huy's CV</p>
-          </a>
+          {!isShowLoadingDownload ? (
+            <a
+              href={fileCV}
+              download
+              onClick={(e, href) => hanldeClickDownload(e, href)}
+            >
+              <i className="fa-solid fa-download"></i>
+              <p style={{ marginTop: "3px" }}>Download Huy's CV</p>
+            </a>
+          ) : (
+            <LoadingIcon></LoadingIcon>
+          )}
         </div>
 
         <div className="options__language">
