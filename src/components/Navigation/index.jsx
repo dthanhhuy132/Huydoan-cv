@@ -21,7 +21,6 @@ import colorStylesReactSelect from "../../util/colorStyleReactSelect";
 import LoadingIcon from "./Loading";
 
 export default function Navigation({ initProps }) {
-  const [activeItem, setActiveItem] = useState(0);
   const [isShowLoadingDownload, setIsShowLoadingDownload] = useState(false);
 
   let navigate = useNavigate();
