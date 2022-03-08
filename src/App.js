@@ -8,11 +8,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Introduction from "./components/Introduction";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Orientation from "./components/Orientation";
+import Personal from "./components/Personal";
 
 export const OptionContext = createContext("");
 function App() {
-  const [isShowLoadingPage, setIsShowLoadingPage] = useState(true);
+  const [isShowLoadingPage, setIsShowLoadingPage] = useState(false);
   const themeModeDefault = localStorage.getItem("themeMode")
     ? localStorage.getItem("themeMode")
     : "light";
@@ -57,7 +57,7 @@ function App() {
                 <Route path="/introduction" element={<Introduction />} />
                 <Route path="/experience" element={<Experience />} />
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/orientation" element={<Orientation />} />
+                <Route path="/personal" element={<Personal />} />
               </Routes>
             </div>
           </div>

@@ -60,7 +60,7 @@ export const navigationData = {
       id: "My Design",
       name: "Góc cá nhân",
       icon: <i className="fa-solid fa-heart"></i>,
-      navigation: "/design",
+      navigation: "/personal",
     },
   ],
   en: [
@@ -90,10 +90,10 @@ export const navigationData = {
 
     {
       active: 3,
-      id: "My Design",
+      id: "Personal",
       name: "Personal",
       icon: <i className="fa-solid fa-heart"></i>,
-      navigation: "/design",
+      navigation: "/personal",
     },
   ],
 };

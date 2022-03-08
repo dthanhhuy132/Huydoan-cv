@@ -25,6 +25,7 @@ export default function Projects() {
       window.addEventListener("scroll", setScrollTop);
 
     setColorProjectNavigation();
+
     return () => {};
   }, []);
 
@@ -55,7 +56,11 @@ export default function Projects() {
                 &#10148; &nbsp; {item.name}
               </h2>
               <p>
-                <i style={{ fontSize: "17px" }}>Giới thiệu: </i>
+                <i style={{ fontSize: "17px" }}>
+                  {context.language === "vn"
+                    ? "Giới thiệu: "
+                    : "Introduction: "}
+                </i>
                 <span>{item.introduce}</span>
               </p>
 
@@ -73,7 +78,11 @@ export default function Projects() {
 
                 {item.technical && (
                   <div className="technical">
-                    <p className="title">Công nghệ và thư viện chính</p>
+                    <p className="title">
+                      {context.language === "vn"
+                        ? "Các thư viện chính"
+                        : "Main library"}
+                    </p>
                     <div>
                       {item.technical.map((tech, i) => (
                         <p key={i}>&#10157; {tech}</p>

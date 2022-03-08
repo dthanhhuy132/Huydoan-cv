@@ -24,14 +24,20 @@ export function navigationActive() {
 
   const itemIsActive = document.querySelector(".item.active");
 
-  if (itemActiveResponsive.style.width == 0)
+  if (
+    itemActiveResponsive.style.width == 0 &&
+    itemActive &&
+    itemActiveResponsive &&
+    itemIsActive
+  ) {
     itemActiveResponsive.style.width = itemIsActive.clientWidth + "px";
+  }
 
   itemEls.forEach((itemEl, index) => {
     itemEl.addEventListener("click", () => {
       itemActive.style.top = `${index * 75}px`;
       itemActiveResponsive.style.left = itemEl.offsetLeft + "px";
-      itemActiveResponsive.style.width = itemEl.clientWidth + "px";
+      itemActiveResponsive.style.width = itemEl?.clientWidth + "px";
     });
   });
 }
@@ -48,8 +54,11 @@ export function navigationActiveResponsive() {
   const itemActiveResponsive = document.querySelector(
     ".item-active-responsive"
   );
-  itemActiveResponsive.style.width = itemActive.clientWidth + "px";
-  itemActiveResponsive.style.left = itemActive.offsetLeft + "px";
+
+  if (itemActive && itemActiveResponsive) {
+    itemActiveResponsive.style.width = itemActive.clientWidth + "px";
+    itemActiveResponsive.style.left = itemActive.offsetLeft + "px";
+  }
 }
 
 export function hideNavigation() {
