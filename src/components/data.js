@@ -215,8 +215,8 @@ export const projectData = {
         "Bootstrap v5",
       ],
       linkDemoName: "Link demo: Project - Post UI",
-      link: "https://js-post-ui-8b5gp1z2m-dthanhhuy132.vercel.app/",
-      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
+      link: "https://js-post-ui-nine.vercel.app/",
+      youtubeLink: "https://www.youtube.com/embed/u8YIpyzJuZo",
     },
 
     {
@@ -233,7 +233,7 @@ export const projectData = {
       technical: ["Công nghệ: ReactJS", "SCSS", "Swiper"],
       linkDemoName: "Link demo: Project - The movie DB",
       link: "https://themoviedb-clone.vercel.app/",
-      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
+      youtubeLink: "https://www.youtube.com/embed/ItZyt0VloMg",
     },
 
     {
@@ -248,8 +248,8 @@ export const projectData = {
         "https://color-matching-one.vercel.app/",
       ],
       youtubeLink: [
-        "https://www.youtube.com/embed/OkRPv5Sa72I",
-        "https://www.youtube.com/embed/OkRPv5Sa72I",
+        "https://www.youtube.com/embed/KI81c68AJxw",
+        "https://www.youtube.com/embed/ZrqwrTHS6do",
       ],
     },
   ],
@@ -288,7 +288,7 @@ export const projectData = {
       ],
       linkDemoName: "Link demo: Project - Post UI",
       link: "https://js-post-ui-8b5gp1z2m-dthanhhuy132.vercel.app/",
-      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
+      youtubeLink: "https://www.youtube.com/embed/u8YIpyzJuZo",
     },
 
     {
@@ -301,7 +301,7 @@ export const projectData = {
       technical: ["Technical: ReactJS", "SCSS", "Swiper"],
       linkDemoName: "Link demo: Project - The movie DB",
       link: "https://themoviedb-clone.vercel.app/",
-      youtubeLink: "https://www.youtube.com/embed/OkRPv5Sa72I",
+      youtubeLink: "https://www.youtube.com/embed/ItZyt0VloMg",
     },
 
     {
@@ -316,8 +316,8 @@ export const projectData = {
         "https://color-matching-one.vercel.app/",
       ],
       youtubeLink: [
-        "https://www.youtube.com/embed/OkRPv5Sa72I",
-        "https://www.youtube.com/embed/OkRPv5Sa72I",
+        "https://www.youtube.com/embed/KI81c68AJxw",
+        "https://www.youtube.com/embed/ZrqwrTHS6do",
       ],
     },
   ],
