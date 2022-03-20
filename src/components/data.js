@@ -4,7 +4,7 @@ export const introductionData = {
     phone: "SĐT",
     introductionTitle: "Giới thiệu",
     introductionText:
-      "<p>''Lời đầu tiêu, em rất cảm ơn quý anh/chị, nhà tuyển dụng đã xem qua CV này. Em là người cởi mở và rất dễ hòa đồng với đồng nghiệp. Nếu được sử dụng 3 từ để miêu tả về bản thân, em xin phép được sử dụng những từ: <i>Nhẫn nại – Cố gắng – Tích cực học hỏi</i> . Luôn phấn đầu vì mục tiêu công việc và lợi ích chung của công ty''</p>",
+      "<p>''Lời đầu tiêu, em rất cảm ơn quý anh/chị, nhà tuyển dụng đã xem qua CV này. Em là người cởi mở và rất dễ hòa đồng với đồng nghiệp. Nếu được sử dụng 3 từ để miêu tả về bản thân, em xin phép được sử dụng những từ: <i>Nhẫn nại – Cố gắng – Tích cực học hỏi</i> . Mặc dù không học chuyên ngành CNTT và chỉ vừa mới chuyển ngành, nhưng với quyết tâm và sự đam mê và tinh thần sẵn sàng học hỏi với lĩnh vực lập trình Web, em tin tưởng mình vẫn sẽ đóng góp vào lợi ích của công ty và chính bản thân mình !.</p>",
     technicalTitle: "Kỹ năng",
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
     jobGoalTitle: "Mục tiêu công việc",
@@ -18,7 +18,7 @@ export const introductionData = {
     phone: "Phone",
     introductionTitle: "Introduction",
     introductionText:
-      "<p>''First of all, I would like to thanks to you for looking at this CV. I am open mind  and sociable with colleagues. If I could use 3 words to describe myself, I would like to use these words: <i>Patience - Effort - Actively learn</i>. Always striving for the work goals and the common ojective of company</p>",
+      "<p>''First of all, I would like to thanks to you for looking at this CV. I am open mind  and sociable with colleagues. If I could use 3 words to describe myself, I would like to use these words: <i>Patience - Effort - Actively learn</i>. Although I am not majoring in IT and just changed majors, with determination, passion and willingness to learn for Web programming, I believe I will still contribute to the company's benefits and myself !.</p>",
     technicalTitle: "Skill",
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
     jobGoalTitle: "Job objective",
