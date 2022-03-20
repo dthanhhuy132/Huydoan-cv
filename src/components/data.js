@@ -9,7 +9,7 @@ export const introductionData = {
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
     jobGoalTitle: "Mục tiêu công việc",
     jobGoalText:
-      "Mong muốn làm việc trong môi trường thân thiện, đầy thử thách và thường xuyên được trau dồi kiến thức, kĩ năng. Sử dụng các kinh nghiệm, kiến thức để đóng góp cho công ty, trở thành một FrontEnd Junior trong khoảng thời gian 3 năm.",
+      "Mong muốn làm việc trong môi trường thân thiện, đầy thử thách và thường xuyên được trau dồi kiến thức, kĩ năng. Sử dụng các kinh nghiệm, kiến thức để đóng góp cho công ty, trở thành một FrontEnd Senior trong khoảng thời gian 3-4 năm.",
     orientation: "Định hướng công việc",
     orientationList: ["Typescript", "NextJS", "Tìm hiểu về Back-end"],
   },
@@ -23,7 +23,7 @@ export const introductionData = {
     technicalList: ["HTML - CSS", "Javascript", "ReactJS"],
     jobGoalTitle: "Job objective",
     jobGoalText:
-      "Desire to work in a friendly, challenging environment and constantly improve knowledge and skills. Using the experience and knowledge to contribute to the company, become a FrontEnd Junior in a period of 3 years.",
+      "Desire to work in a friendly, challenging environment and constantly improve knowledge and skills. Using the experience and knowledge to contribute to the company, become a FrontEnd Senior in a period of 3-4 years.",
     orientation: "Job Orientation",
     orientationList: ["Typescript", "NextJS", "Back-end"],
   },
