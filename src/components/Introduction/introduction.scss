@@ -37,14 +37,14 @@
       }
 
       img {
+        margin-bottom: -99px;
+        margin-left: -31px;
+        margin-top: 63px;
         max-height: 260px;
-
-        margin-top: 30px;
-        margin-left: 20px;
-        margin-bottom: -45px;
-
         object-fit: cover;
+        -webkit-transform: scale(1.5);
         transform: scale(1.5);
+        filter: brightness(1.2);
 
         @include mobile {
           transform: scale(1.3);
