@@ -15,7 +15,7 @@ import Switch from "react-switch";
 import styled from "styled-components";
 import { OptionContext } from "../../App";
 
-import avatar from "../../assets/Profile.jpg";
+import avatar from "../../assets/Profile-mini.jpg";
 import fileCV from "../../assets/HuyDoan-Frontend-Fresher.pdf";
 import colorStylesReactSelect from "../../util/colorStyleReactSelect";
 import LoadingIcon from "./Loading";
